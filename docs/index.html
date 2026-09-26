@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#6c4cf1">
+  <!-- Only load our own files. 'wasm-unsafe-eval' is required to run the model. Nothing is sent anywhere. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; base-uri 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Akuru Liyamu – Sinhala Writing Practice</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%8F%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="logo" id="btn-home" aria-label="Home">
+      <span class="logo-si" lang="si">අකුරු ලියමු</span>
+      <span class="logo-en">Let's write letters</span>
+    </button>
+    <div class="topbar-right">
+      <div class="pill" id="total-stars" title="Stars collected">⭐ 0</div>
+      <button class="pill profile-btn" id="btn-profile" aria-label="Change child"><span id="profile-emoji">🐘</span> <span id="profile-name"></span></button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- Welcome / add child -->
+    <section class="view" id="view-welcome" hidden>
+      <div class="card welcome">
+        <div class="big-emoji">👋</div>
+        <h1 lang="si">ආයුබෝවන්!</h1>
+        <p>What's your name?</p>
+        <form id="welcome-form">
+          <input id="welcome-name" type="text" maxlength="20" autocomplete="off" placeholder="Type your name" aria-label="Your name" required>
+          <button class="btn btn-primary" type="submit">Let's go! 🚀</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Home -->
+    <section class="view" id="view-home" hidden>
+      <div class="hello">
+        <h1 id="hello-title"></h1>
+        <p id="hello-sub"></p>
+      </div>
+      <div class="group-cards" id="group-cards"></div>
+    </section>
+
+    <!-- Letter list -->
+    <section class="view" id="view-letters" hidden>
+      <div class="view-head">
+        <button class="btn btn-ghost" id="btn-back-home">← Back</button>
+        <h2 id="letters-title"></h2>
+      </div>
+      <div class="tiles" id="tiles"></div>
+    </section>
+
+    <!-- Practice -->
+    <section class="view" id="view-practice" hidden>
+      <div class="view-head">
+        <button class="btn btn-ghost" id="btn-back-letters">← Letters</button>
+        <div class="practice-nav">
+          <button class="btn btn-round" id="btn-prev" aria-label="Previous letter">‹</button>
+          <span id="practice-count"></span>
+          <button class="btn btn-round" id="btn-next-nav" aria-label="Next letter">›</button>
+        </div>
+      </div>
+
+      <div class="practice">
+        <div class="target card">
+          <div class="target-label">Write this letter</div>
+          <div class="target-letter" id="target-letter" lang="si"></div>
+          <div class="target-stars" id="target-stars" aria-label="Your best score"></div>
+        </div>
+
+        <div class="pad-wrap">
+          <div class="pad" id="pad">
+            <div class="guide" id="guide" lang="si" aria-hidden="true"></div>
+            <canvas id="canvas" width="320" height="320" aria-label="Drawing area. Write the letter here."></canvas>
+          </div>
+          <div class="toolbar">
+            <button class="btn btn-tool" id="btn-undo">↩️ Undo</button>
+            <button class="btn btn-tool" id="btn-clear">🗑️ Clear</button>
+            <button class="btn btn-tool" id="btn-guide" aria-pressed="true">👀 Guide: on</button>
+          </div>
+          <button class="btn btn-primary btn-check" id="btn-check">Check my letter ✅</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="credit">
+    Letter recognition uses the <a href="https://huggingface.co/sanjeevan7/emnist-letters-sinhala-resnet18-v2" target="_blank" rel="noopener">emnist-letters-sinhala-resnet18-v2</a> model,
+    trained on the <a href="https://www.kaggle.com/datasets/sathiralamal/sinhala-letter-454" target="_blank" rel="noopener">Sinhala Letter and Modifications</a>
+    dataset by Sathira L. Amal (CC BY 4.0). Your child's progress is saved only on this device.
+  </footer>
+
+  <!-- Result popup -->
+  <div class="overlay" id="overlay" hidden>
+    <div class="modal card" role="dialog" aria-modal="true" aria-labelledby="result-title">
+      <div class="big-emoji" id="result-emoji">🎉</div>
+      <h2 id="result-title" lang="si"></h2>
+      <p id="result-msg"></p>
+      <div class="stars big" id="result-stars"></div>
+      <p class="hint" id="result-hint"></p>
+      <div class="modal-actions">
+        <button class="btn btn-tool" id="btn-again">Try again ✏️</button>
+        <button class="btn btn-primary" id="btn-next">Next letter ➜</button>
+      </div>
+    </div>
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+  </div>
+
+  <!-- Child picker -->
+  <dialog id="profile-dialog">
+    <h2>Who is practising?</h2>
+    <div id="profile-list"></div>
+    <form id="add-form">
+      <input id="add-name" type="text" maxlength="20" autocomplete="off" placeholder="Add another child" aria-label="New child's name">
+      <button class="btn btn-tool" type="submit">Add ➕</button>
+    </form>
+    <div class="dialog-actions">
+      <button class="btn btn-danger" id="btn-reset">Reset this child's stars</button>
+      <button class="btn btn-primary" id="btn-close-profile">Done</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="vendor/ort.wasm.min.js"></script>
+  <script src="recognizer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

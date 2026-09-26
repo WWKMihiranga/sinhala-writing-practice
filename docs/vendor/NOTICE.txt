@@ -1,0 +1,4 @@
+ort.wasm.min.js, ort-wasm-simd-threaded.mjs and ort-wasm-simd-threaded.wasm are unmodified
+files from the onnxruntime-web npm package (version in VERSION.txt), (c) Microsoft Corporation,
+MIT License: https://github.com/microsoft/onnxruntime/blob/main/LICENSE
+They are hosted here (instead of loaded from a CDN) so the site makes no third-party requests.

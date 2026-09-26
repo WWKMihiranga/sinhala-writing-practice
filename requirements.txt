@@ -1,0 +1,9 @@
+# Only needed to rebuild the model/letter list (tools/). The website itself needs none of this.
+torch==2.14.0
+torchvision==0.29.0
+pillow==12.3.0
+numpy==2.5.3
+huggingface_hub==2.0.0
+onnx==1.23.0
+onnxruntime==1.30.0
+onnxscript==0.7.2

@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+# 45 MB weights; downloaded automatically from Hugging Face when missing
+models/
+.DS_Store

@@ -1,0 +1,292 @@
+[
+ {
+  "char": "අ",
+  "group": "vowels",
+  "idx": 0
+ },
+ {
+  "char": "ආ",
+  "group": "vowels",
+  "idx": 111
+ },
+ {
+  "char": "ඇ",
+  "group": "vowels",
+  "idx": 222
+ },
+ {
+  "char": "ඈ",
+  "group": "vowels",
+  "idx": 333
+ },
+ {
+  "char": "ඉ",
+  "group": "vowels",
+  "idx": 399
+ },
+ {
+  "char": "ඊ",
+  "group": "vowels",
+  "idx": 410
+ },
+ {
+  "char": "උ",
+  "group": "vowels",
+  "idx": 421
+ },
+ {
+  "char": "එ",
+  "group": "vowels",
+  "idx": 432
+ },
+ {
+  "char": "ඒ",
+  "group": "vowels",
+  "idx": 443
+ },
+ {
+  "char": "ඔ",
+  "group": "vowels",
+  "idx": 1
+ },
+ {
+  "char": "ඕ",
+  "group": "vowels",
+  "idx": 12
+ },
+ {
+  "char": "ක",
+  "group": "consonants",
+  "idx": 23
+ },
+ {
+  "char": "ඛ",
+  "group": "consonants",
+  "idx": 226
+ },
+ {
+  "char": "ග",
+  "group": "consonants",
+  "idx": 167
+ },
+ {
+  "char": "ඝ",
+  "group": "consonants",
+  "idx": 231
+ },
+ {
+  "char": "ච",
+  "group": "consonants",
+  "idx": 311
+ },
+ {
+  "char": "ඡ",
+  "group": "consonants",
+  "idx": 375
+ },
+ {
+  "char": "ජ",
+  "group": "consonants",
+  "idx": 401
+ },
+ {
+  "char": "ඣ",
+  "group": "consonants",
+  "idx": 360
+ },
+ {
+  "char": "ඤ",
+  "group": "consonants",
+  "idx": 354
+ },
+ {
+  "char": "ට",
+  "group": "consonants",
+  "idx": 415
+ },
+ {
+  "char": "ඨ",
+  "group": "consonants",
+  "idx": 315
+ },
+ {
+  "char": "ඩ",
+  "group": "consonants",
+  "idx": 429
+ },
+ {
+  "char": "ඪ",
+  "group": "consonants",
+  "idx": 324
+ },
+ {
+  "char": "ණ",
+  "group": "consonants",
+  "idx": 444
+ },
+ {
+  "char": "ත",
+  "group": "consonants",
+  "idx": 447
+ },
+ {
+  "char": "ථ",
+  "group": "consonants",
+  "idx": 336
+ },
+ {
+  "char": "ද",
+  "group": "consonants",
+  "idx": 7
+ },
+ {
+  "char": "ධ",
+  "group": "consonants",
+  "idx": 304
+ },
+ {
+  "char": "න",
+  "group": "consonants",
+  "idx": 24
+ },
+ {
+  "char": "ප",
+  "group": "consonants",
+  "idx": 39
+ },
+ {
+  "char": "ඵ",
+  "group": "consonants",
+  "idx": 328
+ },
+ {
+  "char": "බ",
+  "group": "consonants",
+  "idx": 55
+ },
+ {
+  "char": "භ",
+  "group": "consonants",
+  "idx": 293
+ },
+ {
+  "char": "ම",
+  "group": "consonants",
+  "idx": 72
+ },
+ {
+  "char": "ය",
+  "group": "consonants",
+  "idx": 88
+ },
+ {
+  "char": "ර",
+  "group": "consonants",
+  "idx": 101
+ },
+ {
+  "char": "ල",
+  "group": "consonants",
+  "idx": 109
+ },
+ {
+  "char": "ව",
+  "group": "consonants",
+  "idx": 121
+ },
+ {
+  "char": "ශ",
+  "group": "consonants",
+  "idx": 138
+ },
+ {
+  "char": "ෂ",
+  "group": "consonants",
+  "idx": 157
+ },
+ {
+  "char": "ස",
+  "group": "consonants",
+  "idx": 168
+ },
+ {
+  "char": "හ",
+  "group": "consonants",
+  "idx": 183
+ },
+ {
+  "char": "ළ",
+  "group": "consonants",
+  "idx": 194
+ },
+ {
+  "char": "ෆ",
+  "group": "consonants",
+  "idx": 203
+ },
+ {
+  "char": "ඟ",
+  "group": "consonants",
+  "idx": 259
+ },
+ {
+  "char": "ඳ",
+  "group": "consonants",
+  "idx": 247
+ },
+ {
+  "char": "ඬ",
+  "group": "consonants",
+  "idx": 270
+ },
+ {
+  "char": "ඥ",
+  "group": "consonants",
+  "idx": 351
+ },
+ {
+  "char": "කා",
+  "group": "signs",
+  "idx": 34
+ },
+ {
+  "char": "කැ",
+  "group": "signs",
+  "idx": 45
+ },
+ {
+  "char": "කෑ",
+  "group": "signs",
+  "idx": 56
+ },
+ {
+  "char": "කි",
+  "group": "signs",
+  "idx": 67
+ },
+ {
+  "char": "කී",
+  "group": "signs",
+  "idx": 78
+ },
+ {
+  "char": "කු",
+  "group": "signs",
+  "idx": 89
+ },
+ {
+  "char": "කූ",
+  "group": "signs",
+  "idx": 100
+ },
+ {
+  "char": "කෝ",
+  "group": "signs",
+  "idx": 123
+ },
+ {
+  "char": "ක්",
+  "group": "signs",
+  "idx": 112
+ }
+]
